@@ -27,7 +27,7 @@ pipeline {
                 script {
                     def imageName = "wajahatullah1/myapplication:${env.BUILD_NUMBER}"
                     docker.withRegistry('https://hub.docker.com/repository/docker/wajahatullah1/myapplication/general', 'wajiikhan112') {
-                        docker.image(carpoolkhan).push()
+                        docker.image(imageName).push()
                         
                     }
                 }
