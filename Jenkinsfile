@@ -9,12 +9,6 @@ pipeline {
             }
         }
         
-        stage('Build') {
-            steps {
-                // Assuming your build process is here
-                // For example, compiling code, running tests, etc.
-            }
-        }
         
         stage('Docker Build') {
             steps {
