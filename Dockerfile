@@ -1,6 +1,9 @@
+
+# Use the Node.js 12.2.0 Alpine base image
 FROM node:12.2.0-alpine
-WORKDIR app
+
+# Set the working directory inside the container to /app
+WORKDIR /app
+
+# Copy the current directory's files and directories to the /app directory inside the container
 COPY . .
-RUN npm install
-EXPOSE 8000
-CMD ["node","app.js"]
