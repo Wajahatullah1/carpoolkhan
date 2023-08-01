@@ -10,12 +10,13 @@ pipeline {
         }
         
         
+           
         stage('Docker Build') {
             steps {
                 // Build Docker image using Dockerfile in the repository
                 script {
-                    def imageName = "Wajahatullah1/carpoolkhan:${env.BUILD_NUMBER}"
-                    docker.build(carpoolkhan, '-f Dockerfile .')
+                    def imageName = "wajahatullah1/myapplication:${env.BUILD_NUMBER}"
+                    docker.build(myimage, '-f Dockerfile .') // Use imageName instead of carpoolkhan
                 }
             }
         }
