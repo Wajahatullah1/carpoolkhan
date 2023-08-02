@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    DOCKER_HOST = 'tcp://172.17.0.1'
+    environment {
+        DOCKER_HOST = 'tcp://172.17.0.1:2376'
+    }
     stages {
         stage('Clone') {
             steps {
@@ -9,18 +11,14 @@ pipeline {
             }
         }
         
-        
-           
         stage('Docker Build') {
             steps {
                 // Build Docker image using Dockerfile in the repository
                 script {
-                    def imageName = "Wajahatullah1/carpoolkhan:${env.BUILD_NUMBER}"
-                    docker.build(imageName, '-f Dockerfile .') // Use imageName instead of carpoolkhan
+                    def imageName = "wajahatullah1/carpoolkhan:${env.BUILD_NUMBER}"
+                    docker.build(imageName, '-f Dockerfile .')
                 }
             }
         }
-        
-     
-        }
     }
+}
