@@ -26,7 +26,7 @@ pipeline {
                 // Push the Docker image to Docker Hub
                 script {
                     def imageName = "wajahatullah1/myapplication:${env.BUILD_NUMBER}"
-                    docker.withRegistry('https://hub.docker.com/repository/docker/wajahatullah1/myapplication/general', 'wajiikhan112') {
+                    docker.withRegistry('https://hub.docker.com/repository/docker/wajahatullah1/myapplication/general', 'e061c2a1-35bd-4088-afa3-ff9ee3ee9336') {
                         docker.image(imageName).push()
                         
                     }
