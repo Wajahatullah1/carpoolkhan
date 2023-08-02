@@ -21,17 +21,7 @@ pipeline {
             }
         }
         
-        stage('Docker Push') {
-            steps {
-                // Push the Docker image to Docker Hub
-                script {
-                    def imageName = "Wajahatullah1/carpoolkhan:${env.BUILD_NUMBER}"
-                    docker.withRegistry('https://hub.docker.com/repository/docker/wajahatullah1/myapplication/general', 'e061c2a1-35bd-4088-afa3-ff9ee3ee9336') {
-                        docker.image(imageName).push()
-                        
-                    }
-                }
-            }
+     
         }
     }
 }
