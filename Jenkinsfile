@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    environment {
-        DOCKER_HOST = 'tcp://172.17.0.1:2726'
-    }
+   
     stages {
         stage('Clone') {
             steps {
