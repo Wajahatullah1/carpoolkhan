@@ -12,7 +12,7 @@ pipeline {
             steps {
                 // Build Docker image using Dockerfile in the repository
                 script {
-                
+                sh 'docker build -t myapp .'
                 }
             }
         }
