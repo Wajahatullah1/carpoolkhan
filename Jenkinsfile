@@ -13,8 +13,7 @@ pipeline {
             steps {
                 // Build Docker image using Dockerfile in the repository
                 script {
-                    def imageName = "wajahatullah1/carpoolkhan:${env.BUILD_NUMBER}"
-                    docker.build(imageName, '-f Dockerfile .')
+                  sh 'docker build -t myapp'
                 }
             }
         }
