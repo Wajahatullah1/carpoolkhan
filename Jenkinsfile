@@ -12,6 +12,7 @@ pipeline {
             steps {
                 // Build Docker image using Dockerfile in the repository
                 script {
+                sh 'systemctl start docker'
                 sh 'docker build -t myapp .'
                 }
             }
